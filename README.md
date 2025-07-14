@@ -47,6 +47,10 @@ This project implements a basic pipelined CPU in Verilog with the following feat
 - Add hazard detection
 - Expand instruction set
 - Better testbench automation
+- Memory-Mapped I/O
+- Cache Integration
+- FPGA Implementation
+- GUI-Based Instruction Entry (Advanced)
 
 ---
 
