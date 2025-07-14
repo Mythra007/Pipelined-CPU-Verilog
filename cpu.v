@@ -1,5 +1,14 @@
 module cpu_top(
     input clk
+    output [7:0] pc_out,
+    output [7:0] instruction_out,
+    output [7:0] alu_result_out,
+    output [7:0] out_val_out,
+    output [7:0] reg_rs_out,      // Optional: value of register rs
+    output [7:0] reg_rt_out,      // Optional: value of register rt
+    output zero_flag_out,
+    output neg_flag_out
+
 );
     wire [7:0] instruction, read_data1, read_data2, alu_result, mem_data_out, out_val;
     wire zero_flag, neg_flag;
@@ -45,5 +54,13 @@ module cpu_top(
 
     // Output
     output_module OUT(alu_result, out_en, out_val);
+    assign pc_out = pc;
+    assign instruction_out = instruction;
+    assign alu_result_out = alu_result;
+    assign out_val_out = out_val;
+    assign reg_rs_out = read_data1;
+    assign reg_rt_out = read_data2;
+    assign zero_flag_out = zero_flag;
+    assign neg_flag_out = neg_flag;
 endmodule
 
